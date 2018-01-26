@@ -1,9 +1,9 @@
 package app
 
 import (
-	"log"
 	"net/http"
 
+	"github.com/Nithiszz/gonews/pkg/model"
 	"github.com/Nithiszz/gonews/pkg/view"
 )
 
@@ -20,10 +20,11 @@ func adminList(w http.ResponseWriter, r *http.Request) {
 
 func adminCreate(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
-		title := r.FormValue("title")
-		detail := r.FormValue("detail")
-		log.Println(title)
-		log.Println(detail)
+		n := model.News{
+			Title:  r.FormValue("title"),
+			Detail: r.FormValue("detail"),
+		}
+		model.CreateNews(n)
 		http.Redirect(w, r, "/admin/create", http.StatusSeeOther)
 		return
 	}
