@@ -1,9 +1,17 @@
 package view
 
-import "net/http"
+import (
+	"net/http"
+
+	"github.com/Nithiszz/gonews/pkg/model"
+)
+
+type IndexData struct {
+	List []*model.News
+}
 
 // Index renders index view
-func Index(w http.ResponseWriter, data interface{}) {
+func Index(w http.ResponseWriter, data *IndexData) {
 	render(tpIndex, w, data)
 }
 

@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
   <link rel="stylesheet" href="/-/css/style.css">
   <title>Go News</title>
-  {{template "root-style"}}
+  {{template "root-style" .}}
 </head>
 
 <body>
@@ -17,14 +17,15 @@
     Navbar
   </div>
   <div class="ui container">
-    {{template "root-body"}}
+    {{template "root-body" .}}
   </div>
   <div>
     Footer
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script> {{template "root-script"}}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script> 
+  {{template "root-script" .}}
 </body>
 
 </html>
